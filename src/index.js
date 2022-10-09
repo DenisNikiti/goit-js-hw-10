@@ -10,4 +10,3 @@ inputEl.addEventListener("input", debounce(fetchCountries,300))
 
 
 
-//   Notiflix.Notify.info("фвфыв");
