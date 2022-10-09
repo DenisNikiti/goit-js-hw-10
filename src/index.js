@@ -6,10 +6,7 @@ const inputEl = document.querySelector(".input-js")
    
 inputEl.addEventListener("input", debounce(fetchCountries,300))
   
-function input(e) {
-      
-   
-}
+
 
 
 
