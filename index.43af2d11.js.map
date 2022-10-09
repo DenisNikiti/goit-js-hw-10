@@ -1,0 +1,1 @@
+{"mappings":"AAGgBA,SAASC,cAAc","sources":["src/index.js"],"sourcesContent":["import { fetchCountries } from \"./js/fetchCountries\";\n\n\nconst inputEl = document.querySelector(\".input-js\")"],"names":["document","querySelector"],"version":3,"file":"index.43af2d11.js.map"}
