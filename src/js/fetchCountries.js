@@ -17,6 +17,8 @@ function fetchCountries(e) {
 }
         
 
+if
+
 
   function CreateCountres(data) {
       return data.map((  { flags,name } ) => { 
