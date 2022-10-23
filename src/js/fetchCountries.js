@@ -1,15 +1,16 @@
 import Notiflix from 'notiflix';
   const ulEl = document.querySelector(".ul-js")
 function fetchCountries(e) {
+  
           const name = e.target.value.trim()
   return  fetch(`https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,languages,flags`).then(response => response.json()).then(data => {
         if (data.length > 10) {
            return Notiflix.Notify.info("Too many matches found. Please enter a more specific name."); }
            if (data.length > 1) {
-            ulEl.insertAdjacentHTML('beforebegin',CreateCountres(data))
+            ulEl.insertAdjacentHTML('afterbegin',createCountres(data))
            }
         if (data.length === 1) {
-              ulEl.insertAdjacentHTML('beforebegin',createCountry(data))  
+              ulEl.insertAdjacentHTML('afterbegin',createCountry(data))  
         }
 
     })
@@ -20,7 +21,7 @@ function fetchCountries(e) {
 
 
 
-  function CreateCountres(data) {
+  function createCountres(data) {
       return data.map((  { flags,name } ) => { 
           return `<li class ="element"> <img src="${flags.svg}" width="20" height="20"><p class="text">${name.official}</p></li>`}).join("")
 }
