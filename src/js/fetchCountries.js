@@ -4,7 +4,8 @@ function fetchCountries(e) {
   
           const name = e.target.value.trim()
   return  fetch(`https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,languages,flags`).then(response => response.json()).then(data => {
-        if (data.length > 10) {
+       console.log(data)    
+    if (data.length > 10) {
            return Notiflix.Notify.info("Too many matches found. Please enter a more specific name."); }
            if (data.length > 1) {
             ulEl.insertAdjacentHTML('afterbegin',createCountres(data))
@@ -12,7 +13,9 @@ function fetchCountries(e) {
         if (data.length === 1) {
               ulEl.insertAdjacentHTML('afterbegin',createCountry(data))  
         }
-
+            if (data.status === 404) {
+              return Notiflix.Notify.failure("Oops, there is no country with that name")
+            }
     })
     
 }
